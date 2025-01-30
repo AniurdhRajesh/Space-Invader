@@ -8,8 +8,8 @@ PLAYER_START_X = 370
 PLAYER_START_Y = 380
 ENEMY_START_Y_MIN = 50
 ENEMY_START_Y_MAX = 150
-ENEMY_SPEED_X = 2
-ENEMY_SPEED_Y = 40
+ENEMY_SPEED_X = 4
+ENEMY_SPEED_Y = 10
 BULLET_SPEED_Y = 10
 COLLISION_DISTANCE = 27
 
@@ -19,6 +19,9 @@ background = pygame.image.load('background.png')
 pygame.display.set_caption("Space Invader")
 icon = pygame.image.load('icon.png')
 pygame.display.set_icon(icon)
+pygame.mixer.music.load("Galactic Echoes.mp3")
+pygame.mixer.music.play(-1)
+
 
 playerImg = pygame.image.load('player.png')
 playerX = PLAYER_START_X
@@ -32,7 +35,7 @@ enemyX_change = []
 enemyY_change = []
 num_of_enemies = 6
 
-for _i in range(num_of_enemies):
+for i in range(num_of_enemies):
     enemyImg.append(pygame.image.load('enemy.png'))
     enemyX.append(random.randint(0, SCREEN_WIDTH - 64))
     enemyY.append(random.randint(ENEMY_START_Y_MIN, ENEMY_START_Y_MAX))
